@@ -2,7 +2,7 @@ plugins:
     ec2-instance-suspend-resume:
         executor: central_deployment_agent
         install: false
-        source: https://github.com/dandrushko/ec2-instance/raw/master/ec2_instance_suspend_resume.zip
+        source: https://github.com/dandrushko/ec-instance/raw/master/ec2-instance.zip
         package_name: ec2-instance-start-stop
         package_version: '0.1'
 
