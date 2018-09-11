@@ -1,0 +1,44 @@
+plugins:
+    ec2-instance-suspend-resume:
+        executor: central_deployment_agent
+        install: false
+        source: https://github.com/dandrushko/ec2-instance/raw/master/ec2_instance_suspend_resume.zip
+        package_name: ec2-instance-start-stop
+        package_version: '0.1'
+
+data_types:
+  5gt.aws.ConnectionConfig:
+    properties:
+      aws_access_key_id:
+        type: string
+        required: false
+      aws_secret_access_key:
+        type: string
+        required: false
+      region_name:
+        type: string
+        required: false
+      service_name:
+        type: string
+        required: false
+
+
+node_types:
+  5gt.aws_instance.ResumeSuspend:
+    derived_from: cloudify.nodes.Root
+    properties:
+      aws_config:
+        type: 5gt.aws.ConnectionConfig
+        required: true
+      aws_instance_id:
+        type: string
+        required: true
+    interfaces:
+      cloudify.interfaces.lifecycle:
+        start:
+          implementation: ec2-instance-suspend-resume.ec2-instance.plugin.start
+          inputs: {}
+        stop:
+          implementation: ec2-instance-suspend-resume.ec2-instance.plugin.stop
+          inputs: {}
+
