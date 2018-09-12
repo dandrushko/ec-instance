@@ -18,11 +18,11 @@ setup(
     zip_safe=False,
     install_requires=[
         # Necessary dependency for developing plugins, do not remove!
-        "cloudify-common>=4.4",
+        #"cloudify-common>=4.4",
         "cloudify-plugins-common>=4.3.3",
         "boto3"
     ],
     test_requires=[
-        "cloudify-common>=4.4"
+        "cloudify-dsl-parser>=4.3.3"
     ]
 )
