@@ -6,9 +6,9 @@ imports:
 
 inputs:
   aws_access_key_id:
-    default: 'AKIAJAIK4BIY7EAM4JQA'
+    default: ''
   aws_secret_access_key:
-    default: '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'
+    default: ''
   ec2_region_name:
     default: 'eu-central-1'
   aws_vpc_id:
