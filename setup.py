@@ -19,6 +19,7 @@ setup(
     install_requires=[
         # Necessary dependency for developing plugins, do not remove!
         "cloudify-common>=4.4",
+        "cloudify-plugins-common>=4.3.3",
         "boto3"
     ],
     test_requires=[
