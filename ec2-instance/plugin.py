@@ -17,7 +17,7 @@ def start(*args, **_):
 
     # Diving deep into the response dict to get instance state object
     state = conn.client.describe_instances(InstanceIds=[instance_id])['Reservations'][0]['Instances'][0]['State']
-    if state['Name'] != 'active':
+    if state['Name'] != 'running':
         return ctx.operation.retry(message='Waiting for the instance to become Active',
                                    retry_after=30)
     return
